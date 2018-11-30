@@ -105,11 +105,10 @@ celerybeat-schedule
 env/
 venv/
 ENV/
+.django-marathon
+django-marathon/
 env.bak/
 venv.bak/
-django-marathon
-
-# Spyder project settings
 .spyderproject
 .spyproject
 

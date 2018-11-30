@@ -1,0 +1,25 @@
+
+<form action="" class="attendee" style="display: none;">
+        {% for i in '123' %}
+            <div class="container">
+                <h1>attendee{{i}}</h1>
+                <p>Please fill in this form to create an account.</p>
+                <hr>
+    
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email{{i}}" required>
+    
+                <label for="psw"><b>Name</b></label>
+                <input type="text" placeholder="Enter Name" name="name{{i}}" required>
+    
+                <label for="psw-repeat"><b>Contact</b></label>
+                <input type="text" placeholder="Enter Contact" name="contact{{i}}" required>
+                {% if i == '1' %}
+                {% if i == '3' %}
+                    <button type="submit" class="registerbtn">Next</button>
+                {% endif %}
+            </div>
+            {% endfor %}
+    </form>
+    
+    

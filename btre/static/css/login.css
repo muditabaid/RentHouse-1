@@ -1,0 +1,22 @@
+
+body {
+    margin: 0;
+    background-color: #fff;
+}
+.container{
+width: 200px;
+height: 300px;
+border: 25px solid green; 
+padding: 25px;
+margin: 25px;
+background-color:green;
+}
+
+ /* .section {
+    background-color: lightgrey;
+    width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+} */
+ 

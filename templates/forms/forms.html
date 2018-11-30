@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+    background-color: white;
+    width: 70%;
+    border-style:solid;
+    border-color: grey;
+    border-size: 1px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* Full-width input fields */
+input[type=text] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity: 1;
+}
+	.proceed {
+    border-color: #4CAF50; /* Green */
+    color: black;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 15px;
+	}
+
+	.counting {
+
+        border-style: solid;
+    	border-width: 1px;
+        padding: 15px;
+        position:relative;
+    }
+	button {
+		padding: 3px;
+        font-size: 30px;
+        background-color:white;
+        border-color: white;
+        color: green;
+	}
+	.val {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    position: relative;
+    width: 20%;
+    padding: 5px;
+    padding-right: 18px;
+    padding-left: 18px;
+    
+    font-size: 30px;
+    text-align: center;
+    margin-left: 5px;
+    
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script >
+$(document).ready(function(){
+	$('.plus').click(function(){
+    	var val=$('.val').text();
+        val++;
+        $('.val').text(val);
+    
+	});
+    $('.minus').click(function(){
+    	var value=$('.val').text();
+        value = --value<0 ? 0 : value;
+        $('.val').text(value);
+    
+	});
+    $('.proceed').click(function(e){
+    	$('.attendee').show();
+         e.preventDefault();
+    });
+    
+});
+</script>
+</head>
+
+<body>
+<div class="counting">
+<p>5km Marathon</p>
+<button class="minus" id="minus">-</button>
+<span class="val" id="val">0</span>
+<button class="plus" id="plus" >+</button>
+</div>
+<button class="proceed" href="{% url 'listings' %}">Proceed</button>
+
+
+
+</body>
+</html>
