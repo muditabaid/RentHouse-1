@@ -13,7 +13,7 @@
               <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae quas, asperiores eveniet vel nostrum magnam
                 voluptatum tempore! Consectetur, id commodi!</p>
               <div class="search">
-                <form action="{% url 'search' %}">
+                <form action="{% url 'index' %}">
                   <!-- Form Row 1 -->
                   <div class="form-row">
                     <div class="col-md-4 mb-3">
@@ -146,25 +146,25 @@
                     <div class="listing-heading text-center">
                       <h4 class="text-primary">{{listing.title}}</h4>
                       <p>
-                        <i class="fas fa-map-marker text-secondary"></i> Norwood MA, 02062</p>
+                        <i class="fas fa-map-marker text-secondary"></i> {{listing.city}} {{listing.state}}, {{listing.zipcode}}</p>
                     </div>
                     <hr>
                     <div class="row py-2 text-secondary">
                       <div class="col-6">
-                        <i class="fas fa-th-large"></i> Sqft: 2500</div>
+                        <i class="fas fa-th-large"></i> Sqft: {{listing.sqft}}</div>
                       <div class="col-6">
-                        <i class="fas fa-car"></i> Garage: 2</div>
+                        <i class="fas fa-car"></i> Garage: {{listing.garage}}</div>
                     </div>
                     <div class="row py-2 text-secondary">
                       <div class="col-6">
-                        <i class="fas fa-bed"></i> Bedrooms: 3</div>
+                        <i class="fas fa-bed"></i> Bedrooms: {{listing.bedrooms}}</div>
                       <div class="col-6">
-                        <i class="fas fa-bath"></i> Bathrooms: 2</div>
+                        <i class="fas fa-bath"></i> Bathrooms: {{listing.bathrooms}}</div>
                     </div>
                     <hr>
                     <div class="row py-2 text-secondary">
                       <div class="col-6">
-                        <i class="fas fa-user"></i> Kyle Brown</div>
+                        <i class="fas fa-user"></i>{{listing.realtor}}</div>
                     </div>
                     <div class="row text-secondary pb-2">
                       <div class="col-6">

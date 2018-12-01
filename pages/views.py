@@ -4,7 +4,19 @@ from listings.models import Listing
 from realtors.models import Realtor
 # Create your views here.
 def index(request):
-    listings = Listing.objects.order_by('-list_date').filter(is_published=True)[:3]
+    listings = Listing.objects.order_by('-list_date').filter(is_published=True)
+    if 'keywords' in request.GET:
+        keywords = request.GET['keywords']
+        if keywords:
+            listings = listings.filter(description__icontains=keywords)
+    if 'city' in request.GET:
+        city = request.GET['city']
+        if city:
+            listings = listings.filter(description__iexact=city)
+    if 'bedrooms' in request.GET:
+        bedrooms = request.GET['bedrooms']
+        if bedrooms:
+            listings = listings.filter(description__iexact=bedrooms)
     context = {
         'listings': listings
     }
