@@ -6,8 +6,8 @@ from realtors.models import Realtor
 from .models import Listing
 def index(request):
     listings=Listing.objects.order_by('-list_date').filter(is_published=True) #put condition on object list 
-    paginator=Paginator(listings,1)
-    page=request.GET.get('page')
+    paginator=Paginator(listings,2)
+    page=request.GET.get('page') #request parameter
     paged_listings=paginator.get_page(page)
     context ={
         'listings': paged_listings
