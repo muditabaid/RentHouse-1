@@ -38,7 +38,7 @@ def register(request):
                     user.save()
                     return redirect('login')
         else:
-            messages.error(request,'Password does not match')
+            messages.error(request,'Password does not match !!!!')
             return redirect('register')
 
 
@@ -47,7 +47,7 @@ def register(request):
         return render(request,'accounts/register.html')
 
 def logout(request):
-    if request.method == 'POST':    
+    if request.method == 'POST':
         auth.logout(request)
         return redirect('index')
 def dashboard(request):
