@@ -12,11 +12,11 @@ def index(request):
     if 'city' in request.GET:
         city = request.GET['city']
         if city:
-            listings = listings.filter(description__iexact=city)
+            listings = listings.filter(city__iexact=city)
     if 'bedrooms' in request.GET:
         bedrooms = request.GET['bedrooms']
         if bedrooms:
-            listings = listings.filter(description__iexact=bedrooms)
+            listings = listings.filter(bedrooms__iexact=bedrooms)
     context = {
         'listings': listings
     }
