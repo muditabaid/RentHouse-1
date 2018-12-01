@@ -40,12 +40,10 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig',
-    'marathon.apps.MarathonConfig',
     'login.apps.LoginConfig',
     'home.apps.HomeConfig',
     'accounts.apps.AccountsConfig',
     'contacts.apps.ContactsConfig',
-    'forms.apps.FormsConfig',
 
     'django.contrib.humanize',
 
