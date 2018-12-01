@@ -16,7 +16,11 @@ def index(request):
     if 'bedrooms' in request.GET:
         bedrooms = request.GET['bedrooms']
         if bedrooms:
-            listings = listings.filter(bedrooms__iexact=bedrooms)
+            listings = listings.filter(bedrooms__lte=bedrooms)
+    if 'price' in request.GET:
+        price = request.GET['price']
+        if price:
+            listings = listings.filter(price__lte=price)
     context = {
         'listings': listings
     }
