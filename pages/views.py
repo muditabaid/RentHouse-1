@@ -22,7 +22,8 @@ def index(request):
         if price:
             listings = listings.filter(price__lte=price)
     context = {
-        'listings': listings
+        'listings': listings,
+        'values': request.GET
     }
     return render(request,'pages/index.html',context)
 
